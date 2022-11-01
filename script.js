@@ -30,10 +30,10 @@ const init = function () {
 }
 
 init();
+
 //handing prompt input
-Name1.textContent = playersName[0].length == 0 ? "Player1" : playersName[0];
-Name2.textContent = playersName[1].length == 0 ? "Player2" : playersName[1];
-console.info(playersName);
+Name1.textContent = playersName[0].length == 0 ? "Player 1" : playersName[0];
+Name2.textContent = playersName[1].length == 0 ? "Player 2" : playersName[1];
 
 function switchPlayer() {
     curScore = 0;
@@ -43,6 +43,7 @@ function switchPlayer() {
     player2Active.classList.toggle('player--active');
 }
 
+//Rolling Dice
 btnRoll.addEventListener('click', function Roll() {
     dice.classList.remove('hidden');
     const SelectedDice = Math.trunc(Math.random() * 6) + 1;
@@ -57,6 +58,8 @@ btnRoll.addEventListener('click', function Roll() {
     }
 })
 
+
+//Holding Score
 btnHold.addEventListener('click', function () {
     score[activePlayer - 1] = score[activePlayer - 1] + curScore;
     document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer - 1];
@@ -72,7 +75,7 @@ btnHold.addEventListener('click', function () {
     }
 })
 
-
+//Start New Game
 btnNew.addEventListener('click', function () {
     btnRoll.style.display = 'block'
     btnHold.style.display = 'block'
