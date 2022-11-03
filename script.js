@@ -31,7 +31,7 @@ const init = function () {
 
 init();
 
-//handing prompt input
+//handing prompt input names of two players
 Name1.textContent = playersName[0].length == 0 ? "Player 1" : playersName[0];
 Name2.textContent = playersName[1].length == 0 ? "Player 2" : playersName[1];
 
